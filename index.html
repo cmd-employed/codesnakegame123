@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pink Anime Snake — Protected</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main class="site">
+    <section class="left">
+      <header class="card title-card">
+        <h1>Sweet Snake</h1>
+        <p class="subtitle">White & Pink • Press arrows or WASD • Enter password to play</p>
+      </header>
+
+      <div class="card game-card">
+        <div class="game-area">
+          <canvas id="gameCanvas" width="480" height="360"></canvas>
+          <div class="hud">
+            <div>Score: <span id="score">0</span></div>
+            <div class="controls">Controls: ←↑→↓ or WASD</div>
+          </div>
+        </div>
+        <div class="game-actions">
+          <button id="btnRestart" class="btn subtle">Restart</button>
+          <button id="btnPause" class="btn subtle">Pause</button>
+        </div>
+      </div>
+
+      <footer class="card footer-card">
+        <small>Theme: white & pink · Replace the anime image with your favorite (see README below).</small>
+      </footer>
+    </section>
+
+    <aside class="right">
+      <!-- Replace "anime-girl.png" with your own image file in the same folder,
+           or change the CSS .anime-panel background-image in styles.css -->
+      <div class="anime-panel">
+        <img src="anime-girl.png" alt="Anime girl (replace me)" onerror="this.style.display='none'"/>
+        <div class="flower"></div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Centered password overlay. The password is defined in script.js (const PASSWORD). -->
+  <div id="pwOverlay" class="overlay">
+    <div class="pw-box card">
+      <h2>Enter Password</h2>
+      <input id="pwInput" type="password" placeholder="Password" autocomplete="off" />
+      <div class="pw-actions">
+        <button id="pwSubmit" class="btn">Unlock</button>
+        <button id="pwClear" class="btn subtle">Clear</button>
+      </div>
+      <p class="hint">Change the password in script.js by editing the PASSWORD constant.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

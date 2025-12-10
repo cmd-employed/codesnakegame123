@@ -1,0 +1,182 @@
+:root{
+  --bg-1: #fff7fb;
+  --bg-2: #ffeef8;
+  --accent: #ff7fbf;
+  --muted: #ffb6d9;
+  --card: #ffffff;
+  --text: #3a2b3a;
+  --glass: rgba(255,255,255,0.6);
+  --radius: 14px;
+  --shadow: 0 8px 30px rgba(175,63,115,0.12);
+  --pink-line: linear-gradient(135deg, rgba(255,127,191,0.12), rgba(255,188,225,0.08));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(circle at 10% 10%, var(--bg-1), var(--bg-2));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height:100vh;
+}
+
+/* decorative full-bleed background */
+.page-bg{
+  position:fixed;
+  inset:0;
+  background: linear-gradient(180deg, rgba(255,245,250,0.6) 0%, rgba(255,238,246,0.4) 100%);
+  pointer-events:none;
+  z-index:0;
+}
+
+/* layout */
+.site{
+  position:relative;
+  z-index:1;
+  display:flex;
+  max-width:1100px;
+  margin:36px auto;
+  gap:28px;
+  padding:20px;
+  align-items:stretch;
+}
+
+.left{flex:1; display:flex; flex-direction:column; gap:18px}
+.right{width:360px; min-width:260px; display:flex; align-items:stretch}
+
+/* cards */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  padding:18px;
+  border:1px solid rgba(255,255,255,0.6);
+}
+
+/* title */
+.title-card h1{
+  margin:0 0 6px;
+  font-size:28px;
+  color:#5a2142;
+  letter-spacing:0.4px;
+}
+.subtitle{margin:0;color:#6b4560;font-size:13px}
+
+/* game card */
+.game-card{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:stretch;
+  padding:14px;
+}
+.game-area{
+  background:var(--pink-line);
+  border-radius:10px;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+canvas{
+  background:linear-gradient(180deg,#fff 0%, #fff9fb 100%);
+  border-radius:8px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.6), 0 6px 18px rgba(180,80,140,0.06);
+  max-width:100%;
+  width:100%;
+  height:auto;
+  image-rendering:pixelated;
+}
+.hud{display:flex; justify-content:space-between; width:100%; margin-top:8px; font-size:14px; color:#7a4a63}
+
+/* actions */
+.game-actions{display:flex; gap:10px}
+.btn{
+  background:linear-gradient(180deg,var(--accent),#ff69b4);
+  color:white;
+  border:0;
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 4px 12px rgba(255,110,170,0.18);
+}
+.btn.subtle{
+  background:transparent;
+  color:#8a4a6a;
+  border:1px solid rgba(138,74,106,0.08);
+  box-shadow:none;
+}
+
+/* footer */
+.footer-card{display:flex; align-items:center; justify-content:space-between; font-size:13px; color:#8a5e76}
+
+/* anime right panel */
+.anime-panel{
+  position:relative;
+  flex:1;
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#fff0f6, #fffafc);
+  padding:18px;
+}
+.anime-panel img{
+  max-height:100%;
+  max-width:100%;
+  object-fit:contain;
+  display:block;
+  filter:drop-shadow(0 12px 30px rgba(215,70,140,0.12));
+}
+/* small decorative flower in the corner */
+.anime-panel .flower{
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  width:64px;
+  height:64px;
+  background:radial-gradient(circle at 30% 30%, #fff6fb, #ffdff0);
+  border-radius:50%;
+  box-shadow:0 6px 20px rgba(255,140,195,0.08);
+  border:4px solid rgba(255,255,255,0.7);
+}
+
+/* password overlay centered */
+.overlay{
+  position:fixed;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,238,246,0.45));
+  z-index:999;
+}
+.pw-box{
+  width:320px;
+  text-align:center;
+  padding:22px;
+}
+.pw-box h2{margin:0 0 12px; color:#6b2b52}
+.pw-box input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(200,150,180,0.28);
+  margin-bottom:12px;
+  font-size:15px;
+  outline:none;
+  background:#fff;
+}
+.pw-actions{display:flex; gap:8px; justify-content:center}
+.hint{margin-top:10px; font-size:12px; color:#90606f}
+
+/* small responsive adjustments */
+@media (max-width:900px){
+  .site{flex-direction:column; padding:18px}
+  .right{width:100%}
+}
