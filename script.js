@@ -1,6 +1,6 @@
 // Pink Anime Snake — script.js
 // Change the password here:
-const PASSWORD = "changeMe123"; // <-- set your password here
+const PASSWORD = "HWDP"; // <-- set your password here
 
 // ---------------- Password overlay handling ----------------
 const pwOverlay = document.getElementById('pwOverlay');
